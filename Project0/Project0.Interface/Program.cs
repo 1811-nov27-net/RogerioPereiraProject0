@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project0.Interface.View.Menu;
+using System;
 
 namespace Project0.Interface
 {
@@ -6,7 +7,7 @@ namespace Project0.Interface
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MainMenu.ShowMainMenu();
         }
     }
 }
