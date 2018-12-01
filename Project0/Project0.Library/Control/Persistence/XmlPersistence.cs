@@ -22,12 +22,12 @@ namespace Project0.Library.Control.Persistence
             throw new NotImplementedException();
         }
 
-        public bool Store()
+        public bool Save()
         {
             throw new NotImplementedException();
         }
 
-        public bool Store(int id)
+        public bool Save(int id)
         {
             throw new NotImplementedException();
         }

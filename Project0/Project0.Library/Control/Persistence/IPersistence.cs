@@ -12,7 +12,7 @@ namespace Project0.Library.Control.Persistence
         /// </summary>
         /// <param name="data">Data to be stored</param>
         /// <returns>Status</returns>
-        bool Store();
+        bool Save();
 
         /// <summary>
         /// Update Data
@@ -20,7 +20,7 @@ namespace Project0.Library.Control.Persistence
         /// <param name="data">>Data to be stored</param>
         /// <param name="id">Item's Id</param>
         /// <returns>Status</returns>
-        bool Store(int id);
+        bool Save(int id);
 
         /// <summary>
         /// </summary>
