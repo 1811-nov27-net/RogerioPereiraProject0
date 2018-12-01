@@ -31,9 +31,8 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "2":
                         ClearHelper.Clear();
-                        Console.WriteLine("Orders!");
-                        Console.ReadKey();
-                        ClearHelper.Clear();
+                        OrderMenu.ShowOrderMenu();
+                        break;
                         break;
                     case "3":
                         ClearHelper.Clear();
