@@ -33,13 +33,13 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "2":
                         ClearHelper.Clear();
-                        Console.WriteLine("Show All!");
+                        Console.WriteLine("Show All Costumers!");
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
                     case "3":
                         ClearHelper.Clear();
-                        Console.WriteLine("Find!");
+                        Console.WriteLine("Find Costumer!");
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;

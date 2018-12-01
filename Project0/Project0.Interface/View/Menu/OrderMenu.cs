@@ -35,25 +35,25 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "2":
                         ClearHelper.Clear();
-                        Console.WriteLine("Show All!");
+                        Console.WriteLine("Show All Orders!");
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
                     case "3":
                         ClearHelper.Clear();
-                        Console.WriteLine("Show All by Location!");
+                        Console.WriteLine("Show All Orders by Location!");
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
                     case "4":
                         ClearHelper.Clear();
-                        Console.WriteLine("Show All by Costumer!");
+                        Console.WriteLine("Show All Orders by Costumer!");
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
                     case "5":
                         ClearHelper.Clear();
-                        Console.WriteLine("Find!");
+                        Console.WriteLine("Find Order!");
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;

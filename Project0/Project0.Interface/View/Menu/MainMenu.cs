@@ -36,13 +36,11 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "3":
                         ClearHelper.Clear();
-                        IngredientsMenu.ShowIngredientsMenu();
+                        IngredientMenu.ShowIngredientsMenu();
                         break;
                     case "4":
                         ClearHelper.Clear();
-                        Console.WriteLine("Pizzas!");
-                        Console.ReadKey();
-                        ClearHelper.Clear();
+                        PizzaMenu.ShowPizzaMenu();
                         break;
                     case "e":
                         Console.WriteLine("Bye!");

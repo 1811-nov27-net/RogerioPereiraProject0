@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Project0.Interface.View.Menu
 {
-    public class IngredientsMenu
+    public class IngredientMenu
     {
         /// <summary>
         /// Show Costumer Main Menu
@@ -34,13 +34,13 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "2":
                         ClearHelper.Clear();
-                        Console.WriteLine("Show All!");
+                        Console.WriteLine("Show All Ingredients!");
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
                     case "3":
                         ClearHelper.Clear();
-                        Console.WriteLine("Find!");
+                        Console.WriteLine("Find Ingredient!");
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
