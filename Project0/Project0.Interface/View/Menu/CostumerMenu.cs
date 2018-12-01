@@ -4,19 +4,19 @@ using System.Text;
 
 namespace Project0.Interface.View.Menu
 {
-    public class MainMenu
+    public class CostumerMenu
     {
         /// <summary>
-        /// Displays MainMenu
+        /// Show Costumer Main Menu
         /// </summary>
-        public static void ShowMainMenu()
+        public static void ShowCostumersMenu()
         {
             string menuOption = new string("");
-            string menu = "Pizza Manager\n\n" +
-                            "1 - Costumers\n" +
-                            "2 - Orders\n" +
-                            "3 - Pizzas\n" +
-                            "e - Exit\n" +
+            string menu = "Costumers\n\n" +
+                            "1 - New\n" +
+                            "2 - Show All\n" +
+                            "3 - Find\n" +
+                            "b - Back\n" +
                             "Option: ";
             do
             {
@@ -27,23 +27,24 @@ namespace Project0.Interface.View.Menu
                 {
                     case "1":
                         ClearHelper.Clear();
-                        CostumerMenu.ShowCostumersMenu();
+                        Console.WriteLine("New Costumer!");
+                        Console.ReadKey();
+                        ClearHelper.Clear();
                         break;
                     case "2":
                         ClearHelper.Clear();
-                        Console.WriteLine("Orders!");
+                        Console.WriteLine("Show All!");
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
                     case "3":
                         ClearHelper.Clear();
-                        Console.WriteLine("Pizzas!");
+                        Console.WriteLine("Find!");
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
-                    case "e":
-                        Console.WriteLine("Bye!");
-                        Console.ReadKey();
+                    case "b":
+                        ClearHelper.Clear();
                         break;
                     default:
                         Console.WriteLine("Wrong option!");
@@ -51,7 +52,7 @@ namespace Project0.Interface.View.Menu
                         ClearHelper.Clear();
                         break;
                 }
-            } while (menuOption != "e");
+            } while (menuOption != "b");
         }
     }
 }
