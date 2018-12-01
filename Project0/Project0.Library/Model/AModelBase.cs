@@ -7,8 +7,23 @@ namespace Project0.Library.Model
 {
     public abstract class AModelBase : XmlPersistence
     {
-        protected readonly string _modelName;
+        /// <summary>
+        /// ModelName used for persistence
+        /// </summary>
+        protected readonly string modelName;
 
-        protected abstract void setModelName(string modelName);
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        protected AModelBase()
+        {
+            modelName = GetModelName();
+        }
+
+        /// <summary>
+        /// AModelBase function
+        /// </summary>
+        /// <returns>Model Name</returns>
+        protected abstract string GetModelName();
     }
 }
