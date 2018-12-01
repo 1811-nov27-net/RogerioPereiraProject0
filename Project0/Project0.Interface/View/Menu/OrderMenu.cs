@@ -7,7 +7,7 @@ namespace Project0.Interface.View.Menu
     public class OrderMenu
     {
         /// <summary>
-        /// Show Costumer Main Menu
+        /// Show Order Main Menu
         /// </summary>
         public static void ShowOrderMenu()
         {

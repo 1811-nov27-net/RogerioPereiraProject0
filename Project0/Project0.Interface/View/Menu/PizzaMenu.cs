@@ -7,7 +7,7 @@ namespace Project0.Interface.View.Menu
     public class PizzaMenu
     {
         /// <summary>
-        /// Show Costumer Main Menu
+        /// Show Pizza Main Menu
         /// </summary>
         public static void ShowPizzaMenu()
         {
