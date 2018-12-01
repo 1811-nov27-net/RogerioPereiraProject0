@@ -15,7 +15,7 @@ namespace Project0.Library.Model
         /// <returns>Model Name</returns>
         protected override string GetModelName()
         {
-            return "Ingredients";
+            return "Ingredient";
         }
 
         public int Id { get; set; }
