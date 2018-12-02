@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project0.Interface.View.Ingredients;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -28,9 +29,7 @@ namespace Project0.Interface.View.Menu
                 {
                     case "1":
                         ClearHelper.Clear();
-                        Console.WriteLine("New Ingredient!");
-                        Console.ReadKey();
-                        ClearHelper.Clear();
+                        IngredientForm.ShowForm();
                         break;
                     case "2":
                         ClearHelper.Clear();
