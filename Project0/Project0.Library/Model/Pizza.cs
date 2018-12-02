@@ -19,7 +19,7 @@ namespace Project0.Library.Model
         }
 
         public int Id { get; set; }
-        public int Name { get; set; }
+        public string Name { get; set; }
         public double Price { get; set; }
         public List<Ingredient> Ingredients { get; set; }
     }
