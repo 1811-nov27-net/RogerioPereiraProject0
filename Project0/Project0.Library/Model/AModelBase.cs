@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Project0.Library.Model
 {
-    public abstract class AModelBase : XmlPersistence
+    public abstract class AModelBase : MemoryPersistence
     {
         /// <summary>
         /// ModelName used for persistence
