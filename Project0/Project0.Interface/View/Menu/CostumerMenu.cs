@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project0.Interface.View.Costumers;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -27,9 +28,7 @@ namespace Project0.Interface.View.Menu
                 {
                     case "1":
                         ClearHelper.Clear();
-                        Console.WriteLine("New Costumer!");
-                        Console.ReadKey();
-                        ClearHelper.Clear();
+                        CostumerForm.ShowForm();
                         break;
                     case "2":
                         ClearHelper.Clear();
