@@ -18,6 +18,8 @@ namespace Project0.Library.Model
             return "Ingredient";
         }
 
+        public Ingredient() { }
+
         public Ingredient(int id, string name, int quantity)
         {
             Id = id;
