@@ -31,6 +31,8 @@ namespace Project0.Interface.View.Costumers
 
             Console.Write("ZipCode:\n");
             costumer.Address.ZipCode = Int32.Parse(Console.ReadLine());
+
+
         }
     }
 }
