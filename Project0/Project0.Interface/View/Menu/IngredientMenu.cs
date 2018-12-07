@@ -19,7 +19,7 @@ namespace Project0.Interface.View.Menu
                             "3 - Find\n" +
                             "4 - Update\n" +
                             "5 - Delete\n" +
-                            "b - Back\n" +
+                            "\nb - Back\n\n" +
                             "Option: ";
             do
             {

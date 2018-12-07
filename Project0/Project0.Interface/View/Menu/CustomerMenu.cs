@@ -18,7 +18,7 @@ namespace Project0.Interface.View.Menu
                             "2 - Show All\n" +
                             "3 - Find\n" +
                             "4 - Update\n" +
-                            "b - Back\n" +
+                            "\nb - Back\n\n" +
                             "Option: ";
             do
             {

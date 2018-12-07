@@ -19,7 +19,7 @@ namespace Project0.Interface.View.Menu
                             "2 - Orders\n" +
                             "3 - Ingredients\n" +
                             "4 - Pizzas\n" +
-                            "e - Exit\n" +
+                            "\ne - Exit\n\n" +
                             "Option: ";
             do
             {
