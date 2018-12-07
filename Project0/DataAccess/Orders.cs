@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Project0.DataAccess
 {
     [Table("orders", Schema = "pizza")]
-    public partial class Orders
+    public partial class Orders : AModel
     {
         public Orders()
         {

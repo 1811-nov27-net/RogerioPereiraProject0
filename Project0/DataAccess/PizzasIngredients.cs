@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Project0.DataAccess
 {
     [Table("pizzasIngredients", Schema = "pizza")]
-    public partial class PizzasIngredients
+    public partial class PizzasIngredients : AModel
     {
         [Column("id")]
         public int Id { get; set; }
