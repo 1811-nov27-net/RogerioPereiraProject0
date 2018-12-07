@@ -26,9 +26,9 @@ namespace Project0.Library.Control.Model
             return (Ingredients)repository.GetById(id);
         }
 
-        public Ingredients FinByName(string name)
+        public List<Ingredients> FindByName(string name)
         {
-            return (Ingredients)repository.GetByName(name);
+            return (List<Ingredients>)repository.GetByName(name);
         }
     }
 }

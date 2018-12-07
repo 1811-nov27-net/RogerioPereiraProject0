@@ -55,7 +55,14 @@ namespace Project0.Interface.View.Ingredients
             IngredientsDataAcess ingredient = controller.FinById(id);
 
             Console.WriteLine();
-            ShowIngredient(ingredient, "ID");
+
+            if (ingredient == null)
+                Console.WriteLine($"There is no Ingredient with this Id");
+            else
+                Console.WriteLine(ingredient.ToString());
+
+            Console.ReadKey();
+            ClearHelper.Clear();
         }
 
         private static void SearchByName()
@@ -66,18 +73,17 @@ namespace Project0.Interface.View.Ingredients
             string name = Console.ReadLine();
 
             Console.WriteLine("\nFetching Data, please wait...");
-            IngredientsDataAcess ingredient = controller.FinByName(name);
+            List<IngredientsDataAcess> ingredients = controller.FindByName(name);
 
             Console.WriteLine();
-            ShowIngredient(ingredient, "Name");
-        }
 
-        private static void ShowIngredient(IngredientsDataAcess ingredient, String type)
-        {
-            if (ingredient == null)
-                Console.WriteLine($"There is no Ingredient with this {type}");
+            if (ingredients.Count == 0)
+                Console.WriteLine($"There is no Ingredient with this Name");
             else
-                Console.WriteLine(ingredient.ToString());
+            {
+                foreach(IngredientsDataAcess ingredient in ingredients)
+                    Console.WriteLine(ingredient.ToString());
+            }
 
             Console.ReadKey();
             ClearHelper.Clear();
