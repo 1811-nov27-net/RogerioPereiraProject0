@@ -21,7 +21,6 @@ namespace Project0.DataAccess
         [Column("address1")]
         [StringLength(100)]
         public string Address1 { get; set; }
-        [Required]
         [Column("address2")]
         [StringLength(100)]
         public string Address2 { get; set; }

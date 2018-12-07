@@ -22,7 +22,7 @@ go
 create table pizza.ingredients(
 	id int IDENTITY(1,1) NOT NULL,
 	name nvarchar(100) NOT NULL,
-	stock int NULL
+	stock int NOT NULL
 );
 
 create table pizza.pizzas (
@@ -112,6 +112,10 @@ alter table pizza.orderPizzas
 	add constraint FK_OrderPizza_Pizza foreign key (pizzaId) references pizza.pizzas (id)
 		on delete no action
 		on update cascade;
+
+--Default Value
+ALTER TABLE pizza.ingredients
+	ADD CONSTRAINT DefaultValue_Ingredient_Stock DEFAULT 0 FOR stock ; 
 
 --Seeds
 --Ingredients

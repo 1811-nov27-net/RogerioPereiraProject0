@@ -20,7 +20,7 @@ namespace Project0.DataAccess
         [StringLength(100)]
         public string Name { get; set; }
         [Column("stock")]
-        public int? Stock { get; set; }
+        public int Stock { get; set; }
 
         [InverseProperty("Ingredient")]
         public virtual ICollection<PizzasIngredients> PizzasIngredients { get; set; }
