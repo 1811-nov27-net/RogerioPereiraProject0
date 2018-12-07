@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,7 +14,7 @@ namespace Project0.DataAccess.Repositories
         /// Get all data stored in data base
         /// </summary>
         /// <returns>IList (AModel)</returns>
-        IList<AModel> GetAll();
+        IList GetAll();
 
         /// <summary>
         /// Get model based on ID
@@ -42,6 +43,6 @@ namespace Project0.DataAccess.Repositories
         /// </summary>
         /// <param name="model">Model to be deleted</param>
         /// <returns>Operation's Status</returns>
-        bool Delete(AModel model);
+        void Delete(int id);
     }
 }

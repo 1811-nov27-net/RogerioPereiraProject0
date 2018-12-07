@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,18 +10,25 @@ namespace Project0.DataAccess.Repositories
     /// </summary>
     public abstract class ARepository : IRepository
     {
+        protected Project0Context Db { get; }
+
+        public ARepository(Project0Context db)
+        {
+            Db = db ?? throw new ArgumentNullException(nameof(db));
+        }
+
         /// <summary>
         /// Delete model
         /// </summary>
         /// <param name="model">Model to be deleted</param>
         /// <returns>Operation's Status</returns>
-        public abstract bool Delete(AModel model);
+        public abstract void Delete(int id);
 
         /// <summary>
         /// Get all data stored in data base
         /// </summary>
         /// <returns>IList (AModel)</returns>
-        public abstract IList<AModel> GetAll();
+        public abstract IList GetAll();
 
         /// <summary>
         /// Get model based on ID
@@ -63,5 +71,13 @@ namespace Project0.DataAccess.Repositories
         /// <param name="id">Model's Id</param>
         /// <returns>Model updated</returns>
         protected abstract AModel Update(AModel model, int? id = null);
+
+        /// <summary>
+        /// Save Database Changes
+        /// </summary>
+        public void SaveChanges()
+        {
+            Db.SaveChanges();
+        }
     }
 }
