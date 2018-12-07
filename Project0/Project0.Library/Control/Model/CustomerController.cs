@@ -16,7 +16,7 @@ namespace Project0.Library.Control.Model
             repository = new CustomerRepository(DbOptions.Context);
         }
 
-        public List<Customers> getAll(bool? withAddress)
+        public List<Customers> getAll(bool? withAddress = false)
         {
             if(withAddress == true)
                 return (List<Customers>)repository.GetAllWithAddress();
@@ -24,7 +24,7 @@ namespace Project0.Library.Control.Model
             return (List<Customers>)repository.GetAll();
         }
 
-        public Customers FindById(int id, bool? withAddress)
+        public Customers FindById(int id, bool? withAddress = false)
         {
             if (withAddress == true)
                 return (Customers)repository.findByIdWithAddress(id);

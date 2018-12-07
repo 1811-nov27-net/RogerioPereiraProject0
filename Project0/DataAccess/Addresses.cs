@@ -43,7 +43,7 @@ namespace Project0.DataAccess
 
         public override string ToString()
         {
-            string ret = $"ID: {Id} - {Address1}.";
+            string ret = $"Address ID: {Id} - {Address1}.";
 
             if(!String.IsNullOrEmpty(Address2))
                 ret = ret + $" {Address1}.";

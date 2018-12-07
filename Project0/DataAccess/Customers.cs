@@ -32,15 +32,16 @@ namespace Project0.DataAccess
 
         public override string ToString()
         {
-            string ret = $"ID: {Id} - {FirstName} {LastName}\n" +
-                        "Addresses\n";
+            string ret = $"ID: {Id} - {FirstName} {LastName}\n";
 
-            foreach(Addresses address in Addresses)
+            if(Addresses.Count > 0)
+                ret = ret + "Addresses\n";
+
+            foreach (Addresses address in Addresses)
             {
                 ret = ret + $"{address.ToString()}\n";
             }
-
-            ret = ret+"\n";
+            
             return ret;
         }
     }

@@ -7,14 +7,14 @@ using CustomerDataAccess = Project0.DataAccess.Customers;
 
 namespace Project0.Interface.View.Customers
 {
-    class ShowAll
+    class ShowAllWithAddress
     {
         public static void Show()
         {
             Console.WriteLine("Fetching Data, please wait...");
 
             CustomerController controller = new CustomerController();
-            List<CustomerDataAccess> list = controller.getAll(false);
+            List<CustomerDataAccess> list = controller.getAll(true);
 
             ClearHelper.Clear();
             Console.WriteLine("Customers:\n");

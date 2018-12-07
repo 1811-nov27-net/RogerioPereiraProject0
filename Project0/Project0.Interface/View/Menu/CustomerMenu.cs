@@ -17,6 +17,7 @@ namespace Project0.Interface.View.Menu
                             "1 - New\n" +
                             "2 - Show All\n" +
                             "3 - Find\n" +
+                            "4 - Update\n" +
                             "b - Back\n" +
                             "Option: ";
             do
@@ -32,7 +33,7 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "2":
                         ClearHelper.Clear();
-                        ShowAll.Show();
+                        ShowAllWithAddress.Show();
                         Console.WriteLine();
                         Console.ReadKey();
                         ClearHelper.Clear();
@@ -41,6 +42,12 @@ namespace Project0.Interface.View.Menu
                         ClearHelper.Clear();
                         SearchForm.Search();
                         ClearHelper.Clear();
+                        break;
+                    case "4":
+                        ClearHelper.Clear();
+                        ShowAll.Show();
+                        Console.WriteLine();
+                        Update.Show();
                         break;
                     case "b":
                         ClearHelper.Clear();
