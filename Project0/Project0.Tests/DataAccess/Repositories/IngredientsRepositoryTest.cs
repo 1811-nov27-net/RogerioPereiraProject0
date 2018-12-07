@@ -15,7 +15,7 @@ namespace Project0.Tests.DataAccess.Repositories
         {
             // arrange (use the context directly - we assume that works)
             var options = new DbContextOptionsBuilder<Project0Context>()
-                .UseInMemoryDatabase("db_test_create").Options;
+                .UseInMemoryDatabase("db__ingredient_test_create").Options;
             using (var db = new Project0Context(options)) ;
 
             // act (for act, only use the repo, to test it)
@@ -44,7 +44,7 @@ namespace Project0.Tests.DataAccess.Repositories
 
             // arrange (use the context directly - we assume that works)
             var options = new DbContextOptionsBuilder<Project0Context>()
-                .UseInMemoryDatabase("db_test_getAll").Options;
+                .UseInMemoryDatabase("db__ingredient_test_getAll").Options;
             using (var db = new Project0Context(options)) ;
 
             // act (for act, only use the repo, to test it)
@@ -80,9 +80,11 @@ namespace Project0.Tests.DataAccess.Repositories
         [Fact]
         public void GetByIdWorks()
         {
+            int id = 0;
+
             // arrange (use the context directly - we assume that works)
             var options = new DbContextOptionsBuilder<Project0Context>()
-                .UseInMemoryDatabase("db_test_getById").Options;
+                .UseInMemoryDatabase("db__ingredient_test_getById").Options;
             using (var db = new Project0Context(options)) ;
 
             // act (for act, only use the repo, to test it)
@@ -93,14 +95,16 @@ namespace Project0.Tests.DataAccess.Repositories
                 Ingredients ingredient = new Ingredients { Name = "Test By Id", Stock = 10 };
                 repo.Save(ingredient);
                 repo.SaveChanges();
+                id = ingredient.Id;
             }
 
             // assert (for assert, once again use the context directly for verify.)
             using (var db = new Project0Context(options))
             {
                 var repo = new IngredientRepository(db);
-                Ingredients ingredient = (Ingredients)repo.GetById(1);
+                Ingredients ingredient = (Ingredients)repo.GetById(id);
 
+                Assert.NotEqual(0, ingredient.Id);
                 Assert.Equal("Test By Id", ingredient.Name);
                 Assert.Equal(10, ingredient.Stock);
             }
@@ -109,9 +113,12 @@ namespace Project0.Tests.DataAccess.Repositories
         [Fact]
         public void GetByNameWorks()
         {
+            string name = "";
+            int id = 0;
+
             // arrange (use the context directly - we assume that works)
             var options = new DbContextOptionsBuilder<Project0Context>()
-                .UseInMemoryDatabase("db_test_getByName").Options;
+                .UseInMemoryDatabase("db__ingredient_test_getByName").Options;
             using (var db = new Project0Context(options)) ;
 
             // act (for act, only use the repo, to test it)
@@ -122,16 +129,105 @@ namespace Project0.Tests.DataAccess.Repositories
                 Ingredients ingredient = new Ingredients { Name = "Test By Name", Stock = 10 };
                 repo.Save(ingredient);
                 repo.SaveChanges();
+                name = ingredient.Name;
+                id = ingredient.Id;
             }
 
             // assert (for assert, once again use the context directly for verify.)
             using (var db = new Project0Context(options))
             {
                 var repo = new IngredientRepository(db);
-                Ingredients ingredient = (Ingredients)repo.GetByName("Test By Name");
+                Ingredients ingredient = (Ingredients)repo.GetByName(name);
 
-                Assert.Equal(1, ingredient.Id);
+                Assert.NotEqual(0, ingredient.Id);
+                Assert.Equal(id, ingredient.Id);
+                Assert.Equal(name, ingredient.Name);
                 Assert.Equal(10, ingredient.Stock);
+            }
+        }
+
+        [Fact]
+        public void DeleteWorks()
+        {
+            int id = 0;
+            // arrange (use the context directly - we assume that works)
+            var options = new DbContextOptionsBuilder<Project0Context>()
+                .UseInMemoryDatabase("db__ingredient_test_delete").Options;
+            using (var db = new Project0Context(options)) ;
+
+            // act (for act, only use the repo, to test it)
+            using (var db = new Project0Context(options))
+            {
+                var repo = new IngredientRepository(db);
+
+                Ingredients ingredient = new Ingredients { Name = "Test Delete", Stock = 10 };
+                repo.Save(ingredient);
+                repo.SaveChanges();
+                id = ingredient.Id;
+            }
+
+            // assert (for assert, once again use the context directly for verify.)
+            using (var db = new Project0Context(options))
+            {
+                var repo = new IngredientRepository(db);
+                Ingredients ingredient = (Ingredients)repo.GetById(id);
+
+                Assert.NotEqual(0, ingredient.Id);
+                Assert.Equal("Test Delete", ingredient.Name);
+                Assert.Equal(10, ingredient.Stock);
+                
+                repo.Delete(id);
+                repo.SaveChanges();
+                ingredient = (Ingredients)repo.GetById(id);
+
+                Assert.Null(ingredient);
+            }
+        }
+
+
+
+        [Fact]
+        public void UpdateWorks()
+        {
+            int id = 0;
+            // arrange (use the context directly - we assume that works)
+            var options = new DbContextOptionsBuilder<Project0Context>()
+                .UseInMemoryDatabase("db__ingredient_test_update").Options;
+            using (var db = new Project0Context(options)) ;
+
+            // act (for act, only use the repo, to test it)
+            using (var db = new Project0Context(options))
+            {
+                var repo = new IngredientRepository(db);
+
+                Ingredients ingredient = new Ingredients { Name = "Test Update", Stock = 10 };
+                repo.Save(ingredient);
+                repo.SaveChanges();
+                id = ingredient.Id;
+            }
+
+            // assert (for assert, once again use the context directly for verify.)
+            using (var db = new Project0Context(options))
+            {
+                var repo = new IngredientRepository(db);
+                Ingredients ingredient = (Ingredients)repo.GetById(id);
+
+                Assert.NotEqual(0, ingredient.Id);
+                Assert.Equal("Test Update", ingredient.Name);
+                Assert.Equal(10, ingredient.Stock);
+
+                ingredient.Name = "Test Update 2";
+                ingredient.Stock = 20;
+
+                repo.Save(ingredient, id);
+                repo.SaveChanges();
+
+                ingredient = (Ingredients)repo.GetById(id);
+
+                Assert.NotEqual(0, ingredient.Id);
+                Assert.Equal(id, ingredient.Id);
+                Assert.Equal("Test Update 2", ingredient.Name);
+                Assert.Equal(20, ingredient.Stock);
             }
         }
     }
