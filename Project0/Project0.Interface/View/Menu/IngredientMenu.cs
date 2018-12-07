@@ -18,7 +18,7 @@ namespace Project0.Interface.View.Menu
                             "2 - Invetory\n" +
                             "3 - Find\n" +
                             "4 - Update\n" +
-                            "5 - Delete\n" +
+                            //"5 - Delete\n" +
                             "\nb - Back\n\n" +
                             "Option: ";
             do
@@ -49,12 +49,12 @@ namespace Project0.Interface.View.Menu
                         Console.WriteLine();
                         Update.Show();
                         break;
-                    case "5":
+                    /*case "5":
                         ClearHelper.Clear();
                         ShowAll.Show();
                         Console.WriteLine();
                         Delete.Show();
-                        break;
+                        break;*/
                     case "b":
                         ClearHelper.Clear();
                         break;
