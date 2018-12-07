@@ -52,7 +52,7 @@ namespace Project0.DataAccess.Repositories
         /// <returns>Model saved</returns>
         public AModel Save(AModel model, int? id = null)
         {
-            if (id == null && id > 0)
+            if (id == null || id < 1)
                 return Create(model);
             else
                 return Update(model, id);
