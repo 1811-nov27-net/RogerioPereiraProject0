@@ -17,7 +17,7 @@ namespace Project0.DataAccess.Repositories
 
         public override void Delete(int id)
         {
-            AModel tracked = (Ingredients)Db.Ingredients.Find(id);
+            Ingredients tracked = Db.Ingredients.Find(id);
             if (tracked == null)
             {
                 throw new ArgumentException("No Ingredient with this id", nameof(id));
@@ -37,7 +37,7 @@ namespace Project0.DataAccess.Repositories
 
         public override AModel GetByName(string name)
         {
-            return Db.Ingredients.First(model => model.Name == name);
+            return Db.Ingredients.FirstOrDefault(model => model.Name == name);
         }
 
         protected override AModel Create(AModel model)
@@ -55,6 +55,11 @@ namespace Project0.DataAccess.Repositories
             }
 
             Ingredients tracked = Db.Ingredients.Find(id);
+            if (tracked == null)
+            {
+                throw new ArgumentException("No Ingredient with this id", nameof(id));
+            }
+
             Db.Entry(tracked).CurrentValues.SetValues(model);
 
             return (Ingredients)model;
