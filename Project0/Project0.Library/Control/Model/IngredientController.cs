@@ -43,5 +43,12 @@ namespace Project0.Library.Control.Model
             repository.Delete(id);
             repository.SaveChanges();
         }
+
+        public Ingredients Update(Ingredients ingredient)
+        {
+            repository.Save(ingredient, ingredient.Id);
+            repository.SaveChanges();
+            return ingredient;
+        }
     }
 }

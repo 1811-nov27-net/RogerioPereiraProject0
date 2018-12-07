@@ -11,7 +11,7 @@ namespace Project0.Interface.View.Ingredients
     {
         public static void ShowForm()
         {
-            /*IngredientsDataAcess ingredient = new IngredientsDataAcess();
+            IngredientsDataAcess ingredient = new IngredientsDataAcess();
 
             Console.Write("Ingrediente Name:\n");
             ingredient.Name = Console.ReadLine();
@@ -24,7 +24,7 @@ namespace Project0.Interface.View.Ingredients
 
             Console.WriteLine("\nIngredient saved!\n");
             Console.ReadKey();
-            ClearHelper.Clear();*/
+            ClearHelper.Clear();
         }
     }
 }
