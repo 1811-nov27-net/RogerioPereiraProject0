@@ -91,7 +91,7 @@ namespace Project0.Tests.DataAccess.Repositories
                 }
             }
         }
-        
+
         [Fact]
         public void GetAllAddress()
         {
@@ -129,7 +129,7 @@ namespace Project0.Tests.DataAccess.Repositories
             {
                 Customers customer = db.Customers.Include(m => m.Addresses).First(m => m.FirstName == "First Name" && m.LastName == "Last Name");
                 List<Addresses> addresses = customer.Addresses.ToList();
-                
+
                 Assert.Equal(listAddresses.Count, addresses.Count);
 
                 for (int i = 0; i < addresses.Count; i++)
@@ -142,6 +142,34 @@ namespace Project0.Tests.DataAccess.Repositories
                     Assert.Equal(listAddresses[i].State, addresses[i].State);
                     Assert.Equal(listAddresses[i].Zipcode, addresses[i].Zipcode);
                 }
+            }
+        }
+
+        [Fact]
+        public void GetAllAddressWithNoAddressShouldReturnNull()
+        {
+            // arrange (use the context directly - we assume that works)
+            var options = new DbContextOptionsBuilder<Project0Context>()
+                .UseInMemoryDatabase("db_customer_test_create_address_2").Options;
+            using (var db = new Project0Context(options)) ;
+
+            // act (for act, only use the repo, to test it)
+            using (var db = new Project0Context(options))
+            {
+                var repo = new CustomerRepository(db);
+                Customers customer = new Customers { FirstName = "First Name", LastName = "Last Name" };
+                
+                repo.Save(customer);
+                repo.SaveChanges();
+            }
+
+            // assert (for assert, once again use the context directly for verify.)
+            using (var db = new Project0Context(options))
+            {
+                Customers customer = db.Customers.Include(m => m.Addresses).First(m => m.FirstName == "First Name" && m.LastName == "Last Name");
+                List<Addresses> addresses = customer.Addresses.ToList();
+
+                Assert.Empty(addresses);
             }
         }
 
@@ -309,6 +337,7 @@ namespace Project0.Tests.DataAccess.Repositories
 
                 Customers customer = new Customers { FirstName = "First Name", LastName = "Last Name" };
                 repo.Save(customer);
+
                 repo.SaveChanges();
                 id = customer.Id;
             }
@@ -330,7 +359,7 @@ namespace Project0.Tests.DataAccess.Repositories
                 Assert.Null(customer);
             }
         }
-        
+
         [Fact]
         public void DeleteWithIdThatDoesntExistThrowsException()
         {

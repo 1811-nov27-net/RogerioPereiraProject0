@@ -1,19 +1,19 @@
-﻿using Project0.Interface.View.Costumers;
+﻿using Project0.Interface.View.Customers;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Project0.Interface.View.Menu
 {
-    public class CostumerMenu
+    public class CustomerMenu
     {
         /// <summary>
-        /// Show Costumer Main Menu
+        /// Show Customer Main Menu
         /// </summary>
-        public static void ShowCostumersMenu()
+        public static void ShowCustomersMenu()
         {
             string menuOption = new string("");
-            string menu = "Costumers\n\n" +
+            string menu = "Customers\n\n" +
                             "1 - New\n" +
                             "2 - Show All\n" +
                             "3 - Find\n" +
@@ -28,17 +28,18 @@ namespace Project0.Interface.View.Menu
                 {
                     case "1":
                         ClearHelper.Clear();
-                        CostumerForm.ShowForm();
+                        CustomerForm.ShowForm();
                         break;
                     case "2":
                         ClearHelper.Clear();
-                        Console.WriteLine("Show All Costumers!");
+                        ShowAll.Show();
+                        Console.WriteLine();
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
                     case "3":
                         ClearHelper.Clear();
-                        Console.WriteLine("Find Costumer!");
+                        Console.WriteLine("Find Customer!");
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;

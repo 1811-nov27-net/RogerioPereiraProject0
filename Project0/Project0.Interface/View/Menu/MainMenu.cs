@@ -30,7 +30,7 @@ namespace Project0.Interface.View.Menu
                 {
                     case "1":
                         ClearHelper.Clear();
-                        CostumerMenu.ShowCostumersMenu();
+                        CustomerMenu.ShowCustomersMenu();
                         break;
                     case "2":
                         ClearHelper.Clear();
