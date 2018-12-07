@@ -52,7 +52,7 @@ namespace Project0.Interface.View.Ingredients
             int id = Int32.Parse(Console.ReadLine());
             
             Console.WriteLine("\nFetching Data, please wait...");
-            IngredientsDataAcess ingredient = controller.FinById(id);
+            IngredientsDataAcess ingredient = controller.FindById(id);
 
             Console.WriteLine();
 

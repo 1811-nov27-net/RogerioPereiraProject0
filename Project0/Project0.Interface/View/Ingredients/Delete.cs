@@ -7,22 +7,21 @@ using IngredientsDataAcess = Project0.DataAccess.Ingredients;
 
 namespace Project0.Interface.View.Ingredients
 {
-    class ShowAll
+    class Delete
     {
         public static void Show()
         {
-            Console.WriteLine("Fetching Data, please wait...");
+            IngredientsDataAcess ingredient = new IngredientsDataAcess();
+
+            Console.Write("Ingredient ID:\n");
+            int id = Int32.Parse(Console.ReadLine());
 
             IngredientController controller = new IngredientController();
-            List<IngredientsDataAcess> list = controller.getAll();
+            controller.Delete(id);
 
+            Console.WriteLine("\nIngredient deleted!\n");
+            Console.ReadKey();
             ClearHelper.Clear();
-            Console.WriteLine("Ingredients:\n");
-
-            foreach(IngredientsDataAcess ingredient in list)
-            {
-                Console.WriteLine(ingredient.ToString());
-            }
         }
     }
 }

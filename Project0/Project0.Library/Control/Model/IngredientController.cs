@@ -21,7 +21,7 @@ namespace Project0.Library.Control.Model
             return (List<Ingredients>)repository.GetAll();
         }
 
-        public Ingredients FinById(int id)
+        public Ingredients FindById(int id)
         {
             return (Ingredients)repository.GetById(id);
         }
@@ -36,6 +36,12 @@ namespace Project0.Library.Control.Model
             Ingredients i = (Ingredients)repository.Save(ingredient);
             repository.SaveChanges();
             return i;
+        }
+
+        public void Delete(int id)
+        {
+            repository.Delete(id);
+            repository.SaveChanges();
         }
     }
 }
