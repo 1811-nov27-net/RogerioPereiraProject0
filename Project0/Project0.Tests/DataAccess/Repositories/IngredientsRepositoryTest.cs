@@ -16,7 +16,7 @@ namespace Project0.Tests.DataAccess.Repositories
             // arrange (use the context directly - we assume that works)
             var options = new DbContextOptionsBuilder<Project0Context>()
                 .UseInMemoryDatabase("db__ingredient_test_create").Options;
-            using (var db = new Project0Context(options)) ;
+            using (var db = new Project0Context(options));
 
             // act (for act, only use the repo, to test it)
             using (var db = new Project0Context(options))

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Project0.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -44,7 +46,6 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "e":
                         Console.WriteLine("Bye!");
-                        Console.ReadKey();
                         break;
                     default:
                         Console.WriteLine("Wrong option!");

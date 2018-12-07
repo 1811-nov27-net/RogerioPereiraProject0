@@ -24,5 +24,10 @@ namespace Project0.DataAccess
 
         [InverseProperty("Ingredient")]
         public virtual ICollection<PizzasIngredients> PizzasIngredients { get; set; }
+
+        public override string ToString()
+        {
+            return $"ID: {Id} - {Name} ({Stock} in stock)";
+        }
     }
 }

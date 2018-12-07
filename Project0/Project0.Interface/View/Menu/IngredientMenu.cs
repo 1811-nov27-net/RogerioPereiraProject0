@@ -15,9 +15,8 @@ namespace Project0.Interface.View.Menu
             string menuOption = new string("");
             string menu = "Ingredients\n\n" +
                             "1 - New\n" +
-                            "2 - Show All\n" +
+                            "2 - Invetory\n" +
                             "3 - Find\n" +
-                            "4 - Invetory\n" +
                             "b - Back\n" +
                             "Option: ";
             do
@@ -33,19 +32,13 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "2":
                         ClearHelper.Clear();
-                        Console.WriteLine("Show All Ingredients!");
+                        ShowAll.Show();
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
                     case "3":
                         ClearHelper.Clear();
                         Console.WriteLine("Find Ingredient!");
-                        Console.ReadKey();
-                        ClearHelper.Clear();
-                        break;
-                    case "4":
-                        ClearHelper.Clear();
-                        Console.WriteLine("Inventory!");
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
