@@ -40,9 +40,14 @@ namespace Project0.DataAccess.Repositories
             return Db.Customers.Find(id);
         }
 
+        public Customers findByIdWithAddress(int id)
+        {
+            return Db.Customers.Include(c => c.Addresses).Where(model => model.Id == id).First();
+        }
+
         public override IList GetByName(string name)
         {
-            return (List<Customers>)Db.Customers.Where(model => model.FirstName.Contains(name) || model.LastName.Contains(name)).ToList();
+            return (List<Customers>)Db.Customers.Include(m => m.Addresses).Where(model => model.FirstName.Contains(name) || model.LastName.Contains(name)).ToList();
         }
 
         protected override AModel Create(AModel model)

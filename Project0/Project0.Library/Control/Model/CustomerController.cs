@@ -24,8 +24,11 @@ namespace Project0.Library.Control.Model
             return (List<Customers>)repository.GetAll();
         }
 
-        public Customers FindById(int id)
+        public Customers FindById(int id, bool? withAddress)
         {
+            if (withAddress == true)
+                return (Customers)repository.findByIdWithAddress(id);
+
             return (Customers)repository.GetById(id);
         }
 

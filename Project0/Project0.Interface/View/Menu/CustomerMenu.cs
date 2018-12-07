@@ -39,8 +39,7 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "3":
                         ClearHelper.Clear();
-                        Console.WriteLine("Find Customer!");
-                        Console.ReadKey();
+                        SearchForm.Search();
                         ClearHelper.Clear();
                         break;
                     case "b":
