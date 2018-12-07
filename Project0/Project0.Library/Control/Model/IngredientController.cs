@@ -30,5 +30,12 @@ namespace Project0.Library.Control.Model
         {
             return (List<Ingredients>)repository.GetByName(name);
         }
+
+        public Ingredients Save(Ingredients ingredient)
+        {
+            Ingredients i = (Ingredients)repository.Save(ingredient);
+            repository.SaveChanges();
+            return i;
+        }
     }
 }
