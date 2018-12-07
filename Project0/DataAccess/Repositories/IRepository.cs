@@ -28,7 +28,7 @@ namespace Project0.DataAccess.Repositories
         /// </summary>
         /// <param name="name">Model's name</param>
         /// <returns>AModel</returns>
-        AModel GetByName(string name);
+        IList GetByName(string name);
 
         /// <summary>
         /// Save a model

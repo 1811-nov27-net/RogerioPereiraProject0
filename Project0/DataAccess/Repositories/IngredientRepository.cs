@@ -35,9 +35,9 @@ namespace Project0.DataAccess.Repositories
             return Db.Ingredients.Find(id);
         }
 
-        public override AModel GetByName(string name)
+        public override IList GetByName(string name)
         {
-            return Db.Ingredients.FirstOrDefault(model => model.Name == name);
+            return (List<Ingredients>)Db.Ingredients.Where(model => model.Name.Contains(name)).ToList();
         }
 
         protected override AModel Create(AModel model)
