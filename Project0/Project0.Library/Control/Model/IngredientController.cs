@@ -20,5 +20,15 @@ namespace Project0.Library.Control.Model
         {
             return (List<Ingredients>)repository.GetAll();
         }
+
+        public Ingredients FinById(int id)
+        {
+            return (Ingredients)repository.GetById(id);
+        }
+
+        public Ingredients FinByName(string name)
+        {
+            return (Ingredients)repository.GetByName(name);
+        }
     }
 }

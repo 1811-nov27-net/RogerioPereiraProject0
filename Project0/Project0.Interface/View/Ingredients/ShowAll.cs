@@ -25,6 +25,8 @@ namespace Project0.Interface.View.Ingredients
             }
 
             Console.WriteLine();
+            Console.ReadKey();
+            ClearHelper.Clear();
         }
     }
 }

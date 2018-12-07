@@ -33,14 +33,10 @@ namespace Project0.Interface.View.Menu
                     case "2":
                         ClearHelper.Clear();
                         ShowAll.Show();
-                        Console.ReadKey();
-                        ClearHelper.Clear();
                         break;
                     case "3":
                         ClearHelper.Clear();
-                        Console.WriteLine("Find Ingredient!");
-                        Console.ReadKey();
-                        ClearHelper.Clear();
+                        SearchForm.Search();
                         break;
                     case "b":
                         ClearHelper.Clear();
