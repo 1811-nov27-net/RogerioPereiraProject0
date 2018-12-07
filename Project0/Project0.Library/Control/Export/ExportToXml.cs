@@ -4,7 +4,7 @@ using Project0.Library.Model;
 
 namespace Project0.Library.Control.Export
 {
-    class ExportToXml : AExport
+    public class ExportToXml : AExport
     {
         public ExportToXml(List<AModelBase> list)
         {
