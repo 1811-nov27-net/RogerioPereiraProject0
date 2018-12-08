@@ -46,7 +46,7 @@ namespace Project0.DataAccess
             string ret = $"Address ID: {Id} - {Address1}.";
 
             if(!String.IsNullOrEmpty(Address2))
-                ret = ret + $" {Address1}.";
+                ret = ret + $" {Address2}.";
 
             ret = ret + $" {City} - {State}. {Zipcode}";
 
