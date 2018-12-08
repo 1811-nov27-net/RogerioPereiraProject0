@@ -1,5 +1,6 @@
 ﻿using Project0.Interface.View.Address;
 using AddressSearch = Project0.Interface.View.Address.SearchForm;
+using AddressUpdate = Project0.Interface.View.Address.Update;
 using Project0.Interface.View.Customers;
 using System;
 using System.Collections.Generic;
@@ -47,9 +48,9 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "4":
                         ClearHelper.Clear();
-                        Console.WriteLine("Update Address!");
-                        Console.ReadKey();
-                        ClearHelper.Clear();
+                        ShowAllWithAddress.Show();
+                        Console.WriteLine();
+                        AddressUpdate.Show();
                         break;
                     case "b":
                         ClearHelper.Clear();

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using CustomerDataAccess = Project0.DataAccess.Customers;
+using AddressDataAccess = Project0.DataAccess.Addresses;
 
 namespace Project0.Interface.View.Customers
 {
@@ -14,7 +15,7 @@ namespace Project0.Interface.View.Customers
         {
             CustomerController controller = new CustomerController();
             CustomerDataAccess customer = new CustomerDataAccess();
-            Addresses address = new Addresses();
+            AddressDataAccess address = new AddressDataAccess();
 
             Console.Write("Customer First Name:\n");
             customer.FirstName = Console.ReadLine();
