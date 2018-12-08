@@ -1,4 +1,5 @@
 ﻿using Project0.Interface.View.Address;
+using AddressSearch = Project0.Interface.View.Address.SearchForm;
 using Project0.Interface.View.Customers;
 using System;
 using System.Collections.Generic;
@@ -41,8 +42,7 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "3":
                         ClearHelper.Clear();
-                        Console.WriteLine("Find Address!");
-                        Console.ReadKey();
+                        AddressSearch.Search();
                         ClearHelper.Clear();
                         break;
                     case "4":

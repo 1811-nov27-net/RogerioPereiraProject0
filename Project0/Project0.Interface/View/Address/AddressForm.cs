@@ -13,29 +13,41 @@ namespace Project0.Interface.View.Address
     {
         public static void ShowForm()
         {
+            Console.WriteLine("Fetching Data, please wait...");
+
             AddressController controller = new AddressController();
             //AddressDataAccess customer = new AddressDataAccess();
             AddressesDataAccess address = new AddressesDataAccess();
             
             CustomerController customerController = new CustomerController();
             List<CustomerDataAccess> customersList = customerController.getAll();
-            CustomerDataAccess customer = new CustomerDataAccess();
+            CustomerDataAccess customer = null;
             int customerId = 0;
 
-            Console.WriteLine("New Address");
-
-            //Show all customers
-            foreach(CustomerDataAccess c in customersList)
+            do
             {
-                Console.WriteLine(c.ToString());
-            }
+                ClearHelper.Clear();
+                Console.WriteLine("New Address\n");
 
-            //Select Customer
-            Console.WriteLine("\nSelect Customer to add address:\n");
-            customerId = Int32.Parse(Console.ReadLine());
-            customer = customerController.FindById(customerId);
-            
-            ClearHelper.Clear();
+                //Show all customers
+                foreach (CustomerDataAccess c in customersList)
+                {
+                    Console.WriteLine(c.ToString());
+                }
+
+                //Select Customer
+                Console.WriteLine("\nSelect Customer to add address:\n");
+                customerId = Int32.Parse(Console.ReadLine());
+                customer = customerController.FindById(customerId);
+
+                if(customer == null)
+                {
+                    Console.WriteLine("\nWrong Customer Id");
+                    Console.ReadKey();
+                }
+
+                ClearHelper.Clear();
+            } while (customer == null);
 
             address.CustomerId = customerId;
 
