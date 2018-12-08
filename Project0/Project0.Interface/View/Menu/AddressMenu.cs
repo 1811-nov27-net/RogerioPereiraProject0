@@ -1,26 +1,25 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Project0.DataAccess;
+﻿using Project0.Interface.View.Address;
+using Project0.Interface.View.Customers;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Project0.Interface.View.Menu
 {
-    public class MainMenu
+    public class AddressMenu
     {
         /// <summary>
-        /// Displays MainMenu
+        /// Show Address Main Menu
         /// </summary>
-        public static void ShowMainMenu()
+        public static void ShowAddressMenu()
         {
             string menuOption = new string("");
-            string menu = "Pizza Manager\n\n" +
-                            "1 - Costumers\n" +
-                            "2 - Addresses\n" +
-                            "3 - Orders\n" +
-                            "4 - Ingredients\n" +
-                            "5 - Pizzas\n" +
-                            "\ne - Exit\n\n" +
+            string menu = "Adresses\n\n" +
+                            "1 - New\n" +
+                            "2 - Show all\n" +
+                            "3 - Find\n" +
+                            "4 - Update\n" +
+                            "\nb - Back\n\n" +
                             "Option: ";
             do
             {
@@ -31,26 +30,29 @@ namespace Project0.Interface.View.Menu
                 {
                     case "1":
                         ClearHelper.Clear();
-                        CustomerMenu.ShowCustomersMenu();
+                        AddressForm.ShowForm();
                         break;
                     case "2":
                         ClearHelper.Clear();
-                        AddressMenu.ShowAddressMenu();
+                        ShowAllWithAddress.Show();
+                        Console.WriteLine();
+                        Console.ReadKey();
+                        ClearHelper.Clear();
                         break;
                     case "3":
                         ClearHelper.Clear();
-                        OrderMenu.ShowOrderMenu();
+                        Console.WriteLine("Find Address!");
+                        Console.ReadKey();
+                        ClearHelper.Clear();
                         break;
                     case "4":
                         ClearHelper.Clear();
-                        IngredientMenu.ShowIngredientsMenu();
-                        break;
-                    case "5":
+                        Console.WriteLine("Update Address!");
+                        Console.ReadKey();
                         ClearHelper.Clear();
-                        PizzaMenu.ShowPizzaMenu();
                         break;
-                    case "e":
-                        Console.WriteLine("Bye!");
+                    case "b":
+                        ClearHelper.Clear();
                         break;
                     default:
                         Console.WriteLine("Wrong option!");
@@ -58,7 +60,7 @@ namespace Project0.Interface.View.Menu
                         ClearHelper.Clear();
                         break;
                 }
-            } while (menuOption != "e");
+            } while (menuOption != "b");
         }
     }
 }
