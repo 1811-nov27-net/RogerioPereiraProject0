@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project0.Interface.View.Pizzas;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -16,6 +17,7 @@ namespace Project0.Interface.View.Menu
                             "1 - New\n" +
                             "2 - Show All\n" +
                             "3 - Find\n" +
+                            "4 - Update\n" +
                             "\nb - Back\n\n" +
                             "Option: ";
             do
@@ -27,13 +29,12 @@ namespace Project0.Interface.View.Menu
                 {
                     case "1":
                         ClearHelper.Clear();
-                        Console.WriteLine("New Pizza!");
-                        Console.ReadKey();
-                        ClearHelper.Clear();
+                        PizzaForm.ShowForm();
                         break;
                     case "2":
                         ClearHelper.Clear();
-                        Console.WriteLine("Show All Pizzas!");
+                        ShowAll.Show();
+                        Console.WriteLine();
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
@@ -42,6 +43,12 @@ namespace Project0.Interface.View.Menu
                         Console.WriteLine("Find Pizza!");
                         Console.ReadKey();
                         ClearHelper.Clear();
+                        break;
+                    case "4":
+                        /*ClearHelper.Clear();
+                        ShowAll.Show();
+                        Console.WriteLine();
+                        Update.Show();*/
                         break;
                     case "b":
                         ClearHelper.Clear();

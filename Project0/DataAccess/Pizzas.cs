@@ -27,5 +27,20 @@ namespace Project0.DataAccess
         public virtual ICollection<OrderPizzas> OrderPizzas { get; set; }
         [InverseProperty("Pizza")]
         public virtual ICollection<PizzasIngredients> PizzasIngredients { get; set; }
+
+        public override string ToString()
+        {
+            string ret = $"ID: {Id} - {Name} {Convert.ToDecimal(string.Format("{0:0,00.00}", Price))}\n";
+
+            if (PizzasIngredients.Count > 0)
+                ret = ret + "Ingredients\n";
+
+            foreach (PizzasIngredients ingredients in PizzasIngredients)
+            {
+                ret = ret + $"Ingredient ID:{ingredients.Ingredient.Id} - {ingredients.Ingredient.Name}\n";
+            }
+
+            return ret;
+        }
     }
 }
