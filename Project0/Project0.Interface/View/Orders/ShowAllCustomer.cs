@@ -47,7 +47,9 @@ namespace Project0.Interface.View.Orders
 
             OrderController controller = new OrderController();
             List<OrderDataAccess> orders = controller.FindByCustomer(customer.Id);
-            
+
+            orders = SortForm.Sort(orders);
+
             ClearHelper.Clear();
             Console.WriteLine($"{customer.FirstName} {customer.LastName}'s Orders:\n");
 

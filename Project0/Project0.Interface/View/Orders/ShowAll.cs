@@ -16,6 +16,8 @@ namespace Project0.Interface.View.Orders
             OrderController controller = new OrderController();
             List<OrdersDataAcess> list = controller.getAll();
 
+            list = SortForm.Sort(list);
+
             ClearHelper.Clear();
             Console.WriteLine("Orders:\n");
 

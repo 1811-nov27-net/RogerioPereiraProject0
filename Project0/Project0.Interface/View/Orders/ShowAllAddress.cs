@@ -49,6 +49,8 @@ namespace Project0.Interface.View.Orders
             OrderController controller = new OrderController();
             List<OrderDataAccess> orders = controller.FindByAddress(address.Id);
             
+            orders = SortForm.Sort(orders);
+
             ClearHelper.Clear();
             Console.WriteLine($"{address.Address1}'s Orders:\n");
 

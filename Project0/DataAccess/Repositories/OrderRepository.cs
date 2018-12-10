@@ -15,6 +15,8 @@ namespace Project0.DataAccess.Repositories
         /// <param name="db">Project0Context</param>
         public OrderRepository(Project0Context db) : base(db) { }
 
+        public string Sort { get; set; }
+
         public override void Delete(int id)
         {
             Orders tracked = Db.Orders.Find(id);
