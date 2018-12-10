@@ -16,8 +16,8 @@ namespace Project0.Interface.View.Menu
             string menu = "Orders\n\n" +
                             "1 - New\n" +
                             "2 - Show All\n" +
-                            "3 - Show All by Location\n" +
-                            "4 - Show All by Costumer\n" +
+                            "3 - Show All by Costumer\n" +
+                            "4 - Show All by Location\n" +
                             "5 - Find\n" +
                             "\nb - Back\n\n" +
                             "Option: ";
@@ -43,13 +43,13 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "3":
                         ClearHelper.Clear();
-                        Console.WriteLine("Show All Orders by Location!");
+                        Console.WriteLine("Show All Orders by Costumer!");
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
                     case "4":
                         ClearHelper.Clear();
-                        Console.WriteLine("Show All Orders by Costumer!");
+                        Console.WriteLine("Show All Orders by Location!");
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;

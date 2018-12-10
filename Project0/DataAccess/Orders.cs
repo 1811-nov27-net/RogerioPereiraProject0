@@ -38,6 +38,8 @@ namespace Project0.DataAccess
         {
             string ret = $"ID: {Id} - {Customer.FirstName} {Customer.LastName}";
             ret = ret + $"\nDelivered at: { Address.ToString() }";
+            ret = ret + $"\nDate: { Date }";
+            ret = ret + $"\nValue: $ {Convert.ToDecimal(string.Format("{0:0,00.00}", Value))}";
 
             if (OrderPizzas.Count > 0)
                 ret = ret + "\nPizzas";
