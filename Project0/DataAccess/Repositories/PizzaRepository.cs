@@ -41,12 +41,22 @@ namespace Project0.DataAccess.Repositories
 
         public override AModel GetById(int id)
         {
-            return Db.Pizzas.Find(id);
+            return Db.Pizzas
+                    .Include(pizza => pizza.PizzasIngredients)
+                    .ThenInclude(pizzasIngredients => pizzasIngredients.Ingredient)
+                    .Where(model => model.Id == id)
+                    .AsNoTracking()
+                    .ToList()
+                    .First();
         }
 
         public override IList GetByName(string name)
         {
-            return (List<Pizzas>)Db.Pizzas.Where(model => model.Name.Contains(name)).ToList();
+            return (List<Pizzas>)Db.Pizzas
+                    .Include(pizza => pizza.PizzasIngredients)
+                    .ThenInclude(pizzasIngredients => pizzasIngredients.Ingredient)
+                    .Where(model => model.Name.Contains(name))
+                    .ToList();
         }
 
         protected override AModel Create(AModel model)

@@ -40,9 +40,7 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "3":
                         ClearHelper.Clear();
-                        Console.WriteLine("Find Pizza!");
-                        Console.ReadKey();
-                        ClearHelper.Clear();
+                        SearchForm.Search();
                         break;
                     case "4":
                         /*ClearHelper.Clear();
