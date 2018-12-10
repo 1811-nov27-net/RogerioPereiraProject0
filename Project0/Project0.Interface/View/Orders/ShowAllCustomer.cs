@@ -15,9 +15,6 @@ namespace Project0.Interface.View.Orders
         {
             Console.WriteLine("Fetching Data, please wait...");
 
-            AddressController addressController = new AddressController();
-            AddressesDataAccess address = new AddressesDataAccess();
-
             CustomerController customerController = new CustomerController();
             List<CustomerDataAccess> customersList = customerController.getAll();
             CustomerDataAccess customer = null;
