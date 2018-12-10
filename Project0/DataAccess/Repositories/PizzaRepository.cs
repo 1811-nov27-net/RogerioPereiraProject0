@@ -45,7 +45,6 @@ namespace Project0.DataAccess.Repositories
                     .Include(pizza => pizza.PizzasIngredients)
                     .ThenInclude(pizzasIngredients => pizzasIngredients.Ingredient)
                     .Where(model => model.Id == id)
-                    .AsNoTracking()
                     .ToList()
                     .First();
         }

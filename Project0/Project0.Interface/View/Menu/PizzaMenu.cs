@@ -43,10 +43,10 @@ namespace Project0.Interface.View.Menu
                         SearchForm.Search();
                         break;
                     case "4":
-                        /*ClearHelper.Clear();
+                        ClearHelper.Clear();
                         ShowAll.Show();
                         Console.WriteLine();
-                        Update.Show();*/
+                        Update.Show();
                         break;
                     case "b":
                         ClearHelper.Clear();
