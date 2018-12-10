@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project0.Interface.View.Orders;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -35,7 +36,8 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "2":
                         ClearHelper.Clear();
-                        Console.WriteLine("Show All Orders!");
+                        ShowAll.Show();
+                        Console.WriteLine();
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
