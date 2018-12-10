@@ -50,7 +50,8 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "4":
                         ClearHelper.Clear();
-                        Console.WriteLine("Show All Orders by Location!");
+                        ShowAllAddress.Show();
+                        Console.WriteLine();
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
