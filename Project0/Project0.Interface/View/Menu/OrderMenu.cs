@@ -43,7 +43,8 @@ namespace Project0.Interface.View.Menu
                         break;
                     case "3":
                         ClearHelper.Clear();
-                        Console.WriteLine("Show All Orders by Costumer!");
+                        ShowAllCustomer.Show();
+                        Console.WriteLine();
                         Console.ReadKey();
                         ClearHelper.Clear();
                         break;
