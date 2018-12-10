@@ -42,5 +42,14 @@ namespace Project0.DataAccess
 
             return ret;
         }
+
+        public void addIngredients(Ingredients ingredient)
+        {
+            PizzasIngredients pi = new PizzasIngredients();
+            pi.addIngredient(ingredient);
+
+            PizzasIngredients.Add(pi);
+        }
+
     }
 }
