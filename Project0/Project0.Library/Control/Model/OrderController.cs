@@ -65,5 +65,10 @@ namespace Project0.Library.Control.Model
         {
             return repository.getLastOrderDate(addressId);
         }
+
+        public List<Pizzas> getSuggestedPizzas(int customerId)
+        {
+            return repository.getSuggestedPizzas(customerId);
+        }
     }
 }

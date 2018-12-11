@@ -30,10 +30,10 @@ namespace Project0.DataAccess
 
         public override string ToString()
         {
-            string ret = $"ID: {Id} - {Name} {Convert.ToDecimal(string.Format("{0:0,00.00}", Price))}\n";
+            string ret = $"ID: {Id} - {Name} {Convert.ToDecimal(string.Format("{0:0,00.00}", Price))}";
 
             if (PizzasIngredients.Count > 0)
-                ret = ret + "Ingredients\n";
+                ret = ret + "\nIngredients\n";
 
             foreach (PizzasIngredients ingredients in PizzasIngredients)
             {

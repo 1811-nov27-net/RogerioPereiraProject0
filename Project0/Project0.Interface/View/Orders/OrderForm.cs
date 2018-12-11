@@ -103,6 +103,7 @@ namespace Project0.Interface.View.Orders
 
             PizzaController pizzaController = new PizzaController();
             List<PizzaDataAccess> pizzas = pizzaController.getAll();
+            List<PizzaDataAccess> suggestedPizzas = orderController.getSuggestedPizzas(customer.Id);
             PizzaDataAccess pizza = null;
             string pizzaOption = null;
             int pizzaId = 0;
@@ -117,6 +118,15 @@ namespace Project0.Interface.View.Orders
                 {
                     Console.WriteLine(p.ToString());
                 }
+                
+                //Suggested Pizzas
+                Console.WriteLine("\n***SUGGESTED PIZZAS***");
+                foreach (PizzaDataAccess sp in suggestedPizzas)
+                {
+                    Console.WriteLine(sp.ToString());
+                }
+                Console.WriteLine("***END SUGGESTED PIZZAS***");
+
                 Console.WriteLine("\nd - Done");
 
                 //Select pizza
