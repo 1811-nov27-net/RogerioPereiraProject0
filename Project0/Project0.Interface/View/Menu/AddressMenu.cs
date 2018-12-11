@@ -21,6 +21,7 @@ namespace Project0.Interface.View.Menu
                             "2 - Show all\n" +
                             "3 - Find\n" +
                             "4 - Update\n" +
+                            "5 - Set Default Address\n" +
                             "\nb - Back\n\n" +
                             "Option: ";
             do
@@ -51,6 +52,13 @@ namespace Project0.Interface.View.Menu
                         ShowAllWithAddress.Show();
                         Console.WriteLine();
                         AddressUpdate.Show();
+                        break;
+                    case "5":
+                        ClearHelper.Clear();
+                        DefaultAddressForm.ShowForm();
+                        Console.WriteLine();
+                        Console.ReadKey();
+                        ClearHelper.Clear();
                         break;
                     case "b":
                         ClearHelper.Clear();

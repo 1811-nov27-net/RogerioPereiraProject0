@@ -71,5 +71,20 @@ namespace Project0.DataAccess.Repositories
 
             return (Addresses)model;
         }
+
+        public void SetDefaultAddress(int addressId, int customerId)
+        {
+            List<Addresses> addresses = (List<Addresses>)GetByCustomerId(customerId);
+
+            foreach(Addresses address in addresses)
+            {
+                if(address.Id == addressId)
+                    address.DefaultAddress = true;
+                else
+                    address.DefaultAddress = false;
+
+                Save(address, address.Id);
+            }
+        }
     }
 }

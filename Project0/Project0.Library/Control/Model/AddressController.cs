@@ -55,5 +55,11 @@ namespace Project0.Library.Control.Model
             repository.SaveChanges();
             return Address;
         }
+
+        public void SetDefaultAddress(int addressId, int customerId)
+        {
+            repository.SetDefaultAddress(addressId, customerId);
+            repository.SaveChanges();
+        }
     }
 }
