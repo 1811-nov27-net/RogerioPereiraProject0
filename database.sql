@@ -183,11 +183,12 @@ insert into pizza.customers (firstName, lastName) values
 ('Customer', '2'),		--3
 ('Customer', '3');		--4
 
-insert into pizza.addresses (customerId, address1, city, state, zipcode) values
-(1, '332 North Croft Ave', 'Los Angeles', 'CA', 90048),
-(2, '2 Address Customer 2', 'City', 'ST', 12345),
-(3, '3 Address Customer 3', 'City', 'ST', 45678),
-(4, '4 Address Customer 4', 'City', 'ST', 98765);
+insert into pizza.addresses (customerId, address1, address2, city, state, zipcode, defaultAddress) values
+(1, '332 North Croft Ave', null, 'Los Angeles', 'CA', 90048, 0),
+(1, '701 W Mitchell Street', '328 D', 'Arlington', 'TX', 76013, 1),
+(2, '2 Address Customer 2', null, 'City', 'ST', 12345, 1),
+(3, '3 Address Customer 3', null, 'City', 'ST', 45678, 1),
+(4, '4 Address Customer 4', null, 'City', 'ST', 98765, 1);
 
 insert into pizza.orders (customerId, addressId, value, date) values
 (1, 1, 40, '2018-12-06 10:27:00'),	--1
