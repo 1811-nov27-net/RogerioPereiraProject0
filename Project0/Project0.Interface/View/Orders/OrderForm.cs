@@ -119,7 +119,8 @@ namespace Project0.Interface.View.Orders
                 //Show all pizzas
                 foreach (PizzaDataAccess p in pizzas)
                 {
-                    Console.WriteLine(p.ToString());
+                    //Cannot use Console.WriteLine(p.ToString()); because after adding a pizza to order, it shows the pizza's ingredient, don't know why
+                    Console.WriteLine($"ID: {p.Id} - {p.Name} {Convert.ToDecimal(string.Format("{0:0,00.00}", p.Price))}");
                 }
                 
                 //Suggested Pizzas
