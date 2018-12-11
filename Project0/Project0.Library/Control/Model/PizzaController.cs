@@ -56,9 +56,14 @@ namespace Project0.Library.Control.Model
             return Pizza;
         }
 
-        public bool CheckStock (Pizzas pizza)
+        public bool CheckStock(Pizzas pizza)
         {
             return repository.CheckStock(pizza);
+        }
+
+        public void DecreaseStock(Pizzas pizza)
+        {
+            repository.DecreaseStock(pizza);
         }
     }
 }

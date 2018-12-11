@@ -110,6 +110,9 @@ namespace Project0.Interface.View.Orders
 
             do
             {
+                pizzas = null;
+                pizzas = pizzaController.getAll();
+
                 ClearHelper.Clear();
                 Console.WriteLine("Adding Pizzas to Order\n");
 
@@ -161,6 +164,7 @@ namespace Project0.Interface.View.Orders
                         }
                         else
                         {
+                            pizzaController.DecreaseStock(pizza);
                             Console.WriteLine($"Pizza {pizza.Id} added!");
                             Console.ReadKey();
                         }
@@ -178,6 +182,7 @@ namespace Project0.Interface.View.Orders
                 }
             } while (pizzaOption != "d");
 
+            order.Date = DateTime.Now;
             orderController.Save(order);
 
             Console.WriteLine("\nOrder saved!\n");

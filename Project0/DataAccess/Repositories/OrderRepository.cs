@@ -33,7 +33,6 @@ namespace Project0.DataAccess.Repositories
                     .Include(orderAddress => orderAddress.Address)
                     .Include(orderPizzas => orderPizzas.OrderPizzas)
                     .ThenInclude(pizzas => pizzas.Pizza)
-                    .AsNoTracking()
                     .ToList();
         }
 

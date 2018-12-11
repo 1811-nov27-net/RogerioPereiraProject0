@@ -27,7 +27,7 @@ namespace Project0.DataAccess.Repositories
 
         public override IList GetAll()
         {
-            return (List<Addresses>) Db.Addresses.AsNoTracking().ToList();
+            return (List<Addresses>) Db.Addresses.ToList();
         }
 
         public override AModel GetById(int id)

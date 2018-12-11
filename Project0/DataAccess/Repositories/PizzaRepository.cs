@@ -27,7 +27,7 @@ namespace Project0.DataAccess.Repositories
 
         public override IList GetAll()
         {
-            return (List<Pizzas>) Db.Pizzas.AsNoTracking().ToList();
+            return (List<Pizzas>) Db.Pizzas.ToList();
         }
 
         public IList GetAllWithIngredients()
@@ -35,7 +35,6 @@ namespace Project0.DataAccess.Repositories
             return (List<Pizzas>)Db.Pizzas
                     .Include(pizza => pizza.PizzasIngredients)
                     .ThenInclude(pizzasIngredients => pizzasIngredients.Ingredient)
-                    .AsNoTracking()
                     .ToList();
         }
 
@@ -100,6 +99,23 @@ namespace Project0.DataAccess.Repositories
             }
 
             return stockAvailable;
+        }
+
+        public void DecreaseStock(Pizzas pizza)
+        {
+            List<PizzasIngredients> pizzaIngredients = Db.PizzasIngredients
+                                                        .Include(p => p.Ingredient)
+                                                        .Where(p => p.PizzaId == pizza.Id)
+                                                        .ToList();
+
+            foreach (PizzasIngredients pizzaIngredient in pizzaIngredients)
+            {
+                IngredientRepository ingredientRepository = new IngredientRepository(Db);
+                Ingredients ingredient = (Ingredients)ingredientRepository.GetById(pizzaIngredient.IngredientId);
+                ingredient.Stock = ingredient.Stock-1;
+                ingredientRepository.Save(ingredient, ingredient.Id);
+                ingredientRepository.SaveChanges();
+            }
         }
     }
 }
