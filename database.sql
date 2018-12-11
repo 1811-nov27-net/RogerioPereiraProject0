@@ -46,6 +46,7 @@ create table pizza.customers (
 create table pizza.addresses (
 	id int IDENTITY(1,1) NOT NULL,
 	customerId int not null,
+	defaultAddress bit not null,
 	address1 nvarchar(100) not null,
 	address2 nvarchar(100) null,
 	city nvarchar(100) not null,
@@ -116,6 +117,8 @@ alter table pizza.orderPizzas
 --Default Value
 ALTER TABLE pizza.ingredients
 	ADD CONSTRAINT DefaultValue_Ingredient_Stock DEFAULT 0 FOR stock ; 
+ALTER TABLE pizza.addresses
+	ADD CONSTRAINT DefaultValue_Address_Default DEFAULT 0 FOR defaultAddress ; 
 
 --Seeds
 --Ingredients
