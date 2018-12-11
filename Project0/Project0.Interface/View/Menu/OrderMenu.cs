@@ -30,9 +30,7 @@ namespace Project0.Interface.View.Menu
                 {
                     case "1":
                         ClearHelper.Clear();
-                        Console.WriteLine("New Order!");
-                        Console.ReadKey();
-                        ClearHelper.Clear();
+                        OrderForm.ShowForm();
                         break;
                     case "2":
                         ClearHelper.Clear();

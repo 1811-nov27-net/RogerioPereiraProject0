@@ -35,19 +35,19 @@ namespace Project0.Library.Model
         ///     If quantity of pizzas > 12 or amount > 500 doesn't add the pizza
         /// </summary>
         /// <param name="pizza"></param>
-        public void AddPizza(Pizza pizza)
+        public bool AddPizza(Pizza pizza)
         {
             double newValue = Value + pizza.Price;
 
-            Console.Write(Pizzas.Count);
-            
-            if(Pizzas.Count >= 12)
+            if (Pizzas.Count >= 12)
             {
                 Console.WriteLine("Maximum quantity of pizzas allowed (12 pizzas)");
+                return false;
             }
-            else if(newValue > 500)
+            else if (newValue > 500)
             {
                 Console.WriteLine("Maximum Order Amount Allowed ($ 500)");
+                return false;
             }
             else
             {
@@ -55,7 +55,18 @@ namespace Project0.Library.Model
                 Value += pizza.Price;
                 Console.Write(" - added");
                 Console.WriteLine();
+                return true;
             }
+        }
+
+        public bool canOrderFromSameAddress(DateTime date)
+        {
+            //If Less then 2 hours can't place order to the address
+            double totalHours = (DateTime.Now - date).TotalHours;
+            if (totalHours < 2)
+                return false;
+
+            return true;
         }
     }
 }

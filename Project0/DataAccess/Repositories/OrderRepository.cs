@@ -105,5 +105,10 @@ namespace Project0.DataAccess.Repositories
 
             return (Orders)model;
         }
+
+        public DateTime getLastOrderDate(int addressId)
+        {
+            return Db.Orders.Where(m => m.AddressId == addressId).DefaultIfEmpty().Max(d => d.Date);
+        }
     }
 }

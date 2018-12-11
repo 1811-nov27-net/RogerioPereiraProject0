@@ -35,11 +35,16 @@ namespace Project0.DataAccess.Repositories
             return Db.Addresses.Find(id);
         }
 
-
         //Search by the Address 1
         public override IList GetByName(string name)
         {
             return (List<Addresses>)Db.Addresses.Where(model => model.Address1.Contains(name)).ToList();
+        }
+        
+        //Search by the Customer Id
+        public IList GetByCustomerId(int customerId)
+        {
+            return (List<Addresses>)Db.Addresses.Where(model => model.CustomerId == customerId).ToList();
         }
 
         protected override AModel Create(AModel model)

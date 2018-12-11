@@ -60,5 +60,10 @@ namespace Project0.Library.Control.Model
             repository.SaveChanges();
             return order;
         }
+
+        public DateTime getLastOrderDate(int addressId)
+        {
+            return repository.getLastOrderDate(addressId);
+        }
     }
 }

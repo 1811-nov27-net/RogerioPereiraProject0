@@ -31,6 +31,11 @@ namespace Project0.Library.Control.Model
             return (List<Addresses>)repository.GetByName(name);
         }
 
+        public List<Addresses> FindByCustomerId(int customerId)
+        {
+            return (List<Addresses>)repository.GetByCustomerId(customerId);
+        }
+
         public Addresses Save(Addresses Address)
         {
             Addresses c = (Addresses)repository.Save(Address);
