@@ -41,7 +41,7 @@ namespace Project0.DataAccess
             {
                 ret = ret + $"{address.ToString()}\n";
             }
-            
+
             return ret;
         }
     }

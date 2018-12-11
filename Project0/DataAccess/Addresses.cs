@@ -17,6 +17,8 @@ namespace Project0.DataAccess
         public int Id { get; set; }
         [Column("customerId")]
         public int CustomerId { get; set; }
+        [Column("defaultAddress")]
+        public bool DefaultAddress { get; set; }
         [Required]
         [Column("address1")]
         [StringLength(100)]
