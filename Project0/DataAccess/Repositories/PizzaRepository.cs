@@ -82,5 +82,24 @@ namespace Project0.DataAccess.Repositories
 
             return (Pizzas)model;
         }
+
+        public bool CheckStock(Pizzas pizza)
+        {
+            bool stockAvailable = true;
+
+            List<PizzasIngredients> pizzaIngredients = Db.PizzasIngredients
+                                                        .Include(p => p.Ingredient)
+                                                        .Where(p => p.PizzaId == pizza.Id)
+                                                        .ToList();
+
+            foreach(PizzasIngredients pizzaIngredient in pizzaIngredients)
+            {
+                Ingredients ingredient = pizzaIngredient.Ingredient;
+                if ((ingredient.Stock - 1) < 0)
+                    stockAvailable = false;
+            }
+
+            return stockAvailable;
+        }
     }
 }

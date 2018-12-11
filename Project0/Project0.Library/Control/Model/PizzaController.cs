@@ -55,5 +55,10 @@ namespace Project0.Library.Control.Model
             repository.SaveChanges();
             return Pizza;
         }
+
+        public bool CheckStock (Pizzas pizza)
+        {
+            return repository.CheckStock(pizza);
+        }
     }
 }

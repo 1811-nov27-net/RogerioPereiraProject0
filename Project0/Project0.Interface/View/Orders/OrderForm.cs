@@ -146,16 +146,28 @@ namespace Project0.Interface.View.Orders
                         Console.ReadKey();
                     }
 
-                    bool canAddMorePizzas = order.AddPizza(pizza);
+                    bool checkStock = true;
+                    bool canAddMorePizzas = true;
 
-                    //Cannot add more pizzas, then pizza Option = "d" for DONE, to stop while
-                    if(canAddMorePizzas == false)
+                    //Check Stock
+                    if (pizzaController.CheckStock(pizza) == true)
                     {
-                        pizzaOption = "d";
+                        canAddMorePizzas = order.AddPizza(pizza);
+                        
+                        //Cannot add more pizzas, then pizza Option = "d" for DONE, to stop while
+                        if (canAddMorePizzas == false)
+                        {
+                            pizzaOption = "d";
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Pizza {pizza.Id} added!");
+                            Console.ReadKey();
+                        }
                     }
                     else
                     {
-                        Console.WriteLine($"Pizza {pizza.Id} added!");
+                        Console.WriteLine("Cannot add this pizza, Pizza's Ingredient stock is low");
                         Console.ReadKey();
                     }
                 }

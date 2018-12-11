@@ -50,6 +50,5 @@ namespace Project0.DataAccess
 
             PizzasIngredients.Add(pi);
         }
-
     }
 }
