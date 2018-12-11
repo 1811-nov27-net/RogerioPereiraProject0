@@ -52,6 +52,9 @@ namespace Project0.DataAccess
 
             ret = ret + $" {City} - {State}. {Zipcode}";
 
+            if (DefaultAddress == true)
+                ret = ret + " *DEFAULT ADDRESS*";
+
             return ret;
         }
     }
